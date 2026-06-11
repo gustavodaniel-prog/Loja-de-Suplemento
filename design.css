@@ -1,0 +1,200 @@
+/* Reset básico para zerar margens e espaçamentos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo do site usando o fundo azul profissional solicitado */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #001689;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* Cabeçalho e Menu */
+.cabecalho {
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    /* Efeito de vidro desfocado moderno */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.menu ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.menu ul li a:hover {
+    color: #ffc107;
+    /* Amarelo destaque ao passar o mouse */
+}
+
+/* Banner de Capa */
+.capa {
+    margin-top: 50px;
+    /* Evita que o menu fixo cubra a imagem */
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.capa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Área de Produtos */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.titulo {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* Layout Responsivo para os Cards de Produtos */
+.container-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Estilização Premium dos Cards */
+.card {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+
+    /* PREPARAÇÃO PARA ANIMAÇÃO JS: */
+    opacity: 0;
+    /* Começa invisível */
+    transform: translateY(40px);
+    /* Começa um pouco abaixo */
+    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.3s;
+}
+
+/* Classe que o JavaScript vai adicionar dinamicamente */
+.card.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover nos Cards */
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(255, 193, 7, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.card-content h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #001689;
+}
+
+.card-content .preco {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e44d26;
+    margin-bottom: 15px;
+}
+
+/* Botões */
+.link-comprar {
+    text-decoration: none;
+    width: 100%;
+}
+
+.btn-comprar {
+    width: 100%;
+    background-color: #001689;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #ffc107;
+    color: #001689;
+}
+
+/* Rodapé e Newsletter */
+.rodape {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.rodape h2 {
+    margin-bottom: 10px;
+}
+
+.rodape p {
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.newsletter-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-box input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.newsletter-box button {
+    padding: 12px 24px;
+    background-color: #ffc107;
+    color: #001689;
+    border: none;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}

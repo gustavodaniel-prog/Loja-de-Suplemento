@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrição - Combustível Inteligente</title>
+    <style>
+        /* --- ESTILOS GERAIS --- */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #001689;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- CONTEÚDO PRINCIPAL --- */
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            /* Garante que o rodapé fique sempre em baixo */
+        }
+
+        h1 {
+            color: #111;
+            font-size: 2.2rem;
+            margin-top: 0;
+            border-bottom: 3px solid #001689;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #001689;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        /* --- ESTILIZAÇÃO DA LISTA (CARDS DE NUTRIÇÃO) --- */
+        ul {
+            list-style: none;
+            /* Remove as bolinhas padrão */
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            position: relative;
+            background: #f8f9fa;
+            margin-bottom: 15px;
+            padding: 20px 20px 20px 50px;
+            border-radius: 8px;
+            font-size: 1.05rem;
+            color: #555;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Efeito de hover nos itens da lista */
+        li:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Marcador personalizado (Ícone de Check/Destaque em CSS) */
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ff6600;
+            /* Cor de destaque */
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        li strong {
+            color: #111;
+            display: inline-block;
+            margin-bottom: 2px;
+        }
+
+        /* --- RODAPÉ E CARROSSEL INFINITO --- */
+        footer {
+            background: #111;
+            color: #fff;
+            margin-top: auto;
+            padding-top: 40px;
+        }
+
+        .footer-title {
+            text-align: center;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff6600;
+            margin-bottom: 25px;
+        }
+
+        /* Contentor do Carrossel */
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            background: #1a1a1a;
+            padding: 20px 0;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Linha que desliza */
+        .carousel-track {
+            display: flex;
+            width: calc(250px * 10);
+            /* Ajustado para o loop de 10 imagens */
+            animation: scroll 25s linear infinite;
+        }
+
+        /* Imagens do Carrossel */
+        .carousel-track img {
+            width: 230px;
+            height: 150px;
+            object-fit: cover;
+            margin: 0 10px;
+            border-radius: 6px;
+            filter: grayscale(30%);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .carousel-track img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Animação CSS para o Movimento Infinito */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 5));
+                /* Metade do tamanho total da track */
+            }
+        }
+
+        /* Pausa o carrossel ao passar o rato */
+        .carousel-container:hover .carousel-track {
+            animation-play-state: paused;
+        }
+
+        /* Direitos de Autor */
+        .footer-credits {
+            text-align: center;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            li {
+                padding: 15px 15px 15px 40px;
+            }
+
+            li::before {
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Combustível Inteligente para Resultados Reais</h1>
+        <p>Treinar no duro e com intensidade é apenas metade da equação para o sucesso. Para construir um físico
+            verdadeiramente forte, estético e saudável, precisas de dar ao teu corpo os nutrientes certos no momento
+            ideal. Esquece de uma vez por todas as dietas restritivas e os mitos urbanos: a nossa abordagem baseia-se em
+            nutrição prática, sustentável a longo prazo e focada nos teus objetivos reais.</p>
+
+        <h2>O que vais encontrar aqui:</h2>
+        <ul>
+            <li>
+                <strong>Estratégias para Ganho de Massa (Hipertrofia):</strong> Métodos eficientes para bater as tuas
+                calorias diárias de forma limpa e saudável.
+            </li>
+            <li>
+                <strong>Suplementação Inteligente:</strong> O que realmente funciona cientificamente para otimizar a tua
+                performance diária e acelerar a tua recuperação muscular.
+            </li>
+            <li>
+                <strong>Planos Alimentares Ajustados:</strong> Estratégias de nutrição perfeitamente calculadas com base
+                no teu biótipo específico e na tua rotina de vida diária.
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        <div class="footer-title">O Nosso Ecossistema</div>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <img src="imagem de carossel/treino.webp" alt="Treino 1">
+                <img src="imagem de carossel/Bjj.jpg" alt="BJJ 2">
+                <img src="imagem de carossel/Bodybuilding.jfif" alt="Bodybuilding 3">
+                <img src="imagem de carossel/foco.jpg" alt="Foco 4">
+                <img src="imagem de carossel/comunidade.avif" alt="Comunidade 5">
+
+                <img src="imagem de carossel/14233932-mulher-musculosa-fazendo-treino-nas-costas-foto.jpg"
+                    alt="Treino 1">
+                <img src="imagem de carossel/bjj2.jfif" alt="BJJ 2">
+                <img src="imagem de carossel/Bodybuilding.jfif" alt="Bodybuilding 3">
+                <img src="imagem de carossel/foco.jpg" alt="Foco 4">
+                <img src="imagem de carossel/comunidade.avif" alt="Comunidade 5">
+            </div>
+        </div>
+
+        <div class="footer-credits">
+            &copy; 2026 A Minha Missão. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>

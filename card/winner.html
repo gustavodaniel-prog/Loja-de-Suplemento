@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creatina Monohidratada - Stander</title>
+    <style>
+        /* Configurações Globais e Variáveis de Cores */
+        :root {
+            --bg-principal: #001689;
+            --bg-card: #ffffff;
+            --texto-escuro: #1e293b;
+            --texto-mutado: #64748b;
+            --accent-preco: #ff4757;
+            --whatsapp-green: #25D366;
+            --whatsapp-hover: #1e9d4b;
+            --borda-raio: 16px;
+            --shadow-suave: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--texto-escuro);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* ---------------------------------------------------- */
+        /* ANIMAÇÃO DE ENTRADA (CSS Animation)                  */
+        /* ---------------------------------------------------- */
+        @keyframes subirEVisualizar {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Container Principal com Design Card Premium */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background: var(--bg-card);
+            border-radius: var(--borda-raio);
+            box-shadow: var(--shadow-suave);
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+
+            /* Aplicando a animação de entrada no card */
+            animation: subirEVisualizar 0.8s ease-out forwards;
+        }
+
+        /* Área da Imagem */
+        .produto-imagem {
+            flex: 1;
+            min-width: 320px;
+            background-color: #f8fafc;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .produto-imagem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: calc(var(--borda-raio) - 4px);
+            transition: transform 0.4s ease;
+        }
+
+        /* Efeito interativo ao passar o mouse na imagem */
+        .produto-imagem:hover img {
+            transform: scale(1.04);
+        }
+
+        /* Área de Informações */
+        .produto-info {
+            flex: 1;
+            min-width: 320px;
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Selo de Destaque */
+        .badge {
+            display: inline-block;
+            align-self: flex-start;
+            background: rgba(0, 22, 137, 0.1);
+            color: var(--bg-principal);
+            padding: 6px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #0f172a;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        /* Bloco de Preço Estilizado */
+        .preco-container {
+            margin: 20px 0;
+            border-bottom: 1px solid #e2e8f0;
+            border-top: 1px solid #e2e8f0;
+            padding: 15px 0;
+        }
+
+        .preco-label {
+            font-size: 12px;
+            color: var(--texto-mutado);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .preco {
+            font-size: 26px;
+            color: #001689;
+            font-weight: 700;
+            margin-top: 2px;
+        }
+
+        /* Descrição e Subtítulos */
+        .descricao h3 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--texto-mutado);
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+
+        .descricao p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 15px;
+        }
+
+        /* Lista de Benefícios com Ícones Customizados */
+        .beneficios-lista {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .beneficios-lista li {
+            font-size: 14px;
+            color: #475569;
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        /* Checkmark (✓) gerado via CSS */
+        .beneficios-lista li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: -1px;
+            color: var(--bg-principal);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Botão Premium do WhatsApp */
+        .btn-whatsapp {
+            display: block;
+            background-color: var(--whatsapp-green);
+            color: white;
+            text-decoration: none;
+            padding: 16px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        .btn-whatsapp:active {
+            transform: translateY(0);
+        }
+
+        /* Adaptação para Telas de Celular */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 10px;
+            }
+
+            .produto-info {
+                padding: 30px 20px;
+            }
+
+            .produto-imagem {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="produto-imagem">
+            <img src="img/energetico2.webp" alt="Creatina Monohidratada">
+        </div>
+
+        <div class="produto-info">
+            <span class="badge">Destaque da Semana</span>
+            <h1>Creatina Monohidratada</h1>
+
+            <div class="preco-container">
+                <p class="preco-label">Condição Exclusiva</p>
+                <p class="preco">Preço sob consulta</p>
+            </div>
+
+            <div class="descricao">
+                <h3>Descrição do Produto:</h3>
+                <p>A Creatina é o suplemento ideal para quem busca aumento de força, resistência e ganho de massa
+                    muscular magra. Com alto grau de pureza, ela auxilia no desempenho de treinos de alta intensidade.
+                </p>
+
+                <h3>Diferenciais:</h3>
+                <ul class="beneficios-lista">
+                    <li><strong>100% PURA:</strong> Sem misturas ou aditivos.</li>
+                    <li><strong>RECUPERAÇÃO MUSCULAR:</strong> Diminui a fadiga celular.</li>
+                    <li><strong>ALTA PERFORMANCE:</strong> Perfeita para musculação, crossfit e lutas.</li>
+                </ul>
+            </div>
+
+            <a href="https://wa.me/5500000000000?text=Olá!%20Gostaria%20de%20comprar%20a%20Creatina%20Monohidratada."
+                target="_blank" class="btn-whatsapp">
+                Pedir pelo WhatsApp
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

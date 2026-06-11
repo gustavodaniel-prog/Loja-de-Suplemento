@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade - Treino e Performance</title>
+    <style>
+        /* --- ESTILOS GERAIS --- */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #001689;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- CONTEÚDO PRINCIPAL --- */
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            /* Garante que o rodapé fique sempre em baixo */
+        }
+
+        h1 {
+            color: #111;
+            font-size: 2.2rem;
+            margin-top: 0;
+            border-bottom: 3px solid #001689;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 25px;
+        }
+
+        /* --- ESTILIZAÇÃO DAS MODALIDADES --- */
+        .modality {
+            margin-bottom: 35px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 5px solid #001689;
+            border-radius: 0 8px 8px 0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Destaca ligeiramente a modalidade ao passar o rato */
+        .modality:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Altera a cor do traço esquerdo especificamente para a segunda modalidade (toque de destaque) */
+        .modality:nth-child(3) {
+            border-left-color: #ff6600;
+        }
+
+        .modality h2 {
+            margin-top: 0;
+            color: #001689;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Destaca o título da segunda modalidade com a cor secundária */
+        .modality:nth-child(3) h2 {
+            color: #ff6600;
+        }
+
+        .modality p {
+            margin-bottom: 0;
+            font-size: 1.05rem;
+            color: #555;
+        }
+
+        /* --- RODAPÉ E CARROSSEL INFINITO --- */
+        footer {
+            background: #111;
+            color: #fff;
+            margin-top: auto;
+            padding-top: 40px;
+        }
+
+        .footer-title {
+            text-align: center;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff6600;
+            margin-bottom: 25px;
+        }
+
+        /* Contentor do Carrossel */
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            background: #1a1a1a;
+            padding: 20px 0;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Linha que desliza */
+        .carousel-track {
+            display: flex;
+            width: calc(250px * 10);
+            /* Ajustado para o número de imagens duplicadas */
+            animation: scroll 25s linear infinite;
+        }
+
+        /* Imagens do Carrossel */
+        .carousel-track img {
+            width: 230px;
+            height: 150px;
+            object-fit: cover;
+            margin: 0 10px;
+            border-radius: 6px;
+            filter: grayscale(30%);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .carousel-track img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Animação CSS para o Movimento Infinito */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 5));
+                /* Metade do tamanho total da track */
+            }
+        }
+
+        /* Pausa o carrossel ao passar o rato */
+        .carousel-container:hover .carousel-track {
+            animation-play-state: paused;
+        }
+
+        /* Direitos de Autor */
+        .footer-credits {
+            text-align: center;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .modality {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Movimento, Força e Técnica</h1>
+        <p>O corpo humano foi biologicamente concebido para se movimentar em alta performance. Nesta página, exploramos
+            detalhadamente as modalidades físicas de eleição que têm o poder real de transformar por completo a tua
+            estética corporal e a tua força mental. O nosso foco divide-se rigorosamente em duas grandes frentes de
+            ação:</p>
+
+        <div class="modality">
+            <h2>1. Bodybuilding & Musculação</h2>
+            <p>Com foco total na hipertrofia muscular, correção postural, ganho substancial de força bruta e simetria
+                física. Os treinos são estruturados de forma inteligente e intensa, pensados estrategicamente para
+                desafiar os teus limites biológicos atuais e maximizar o ganho de massa magra.</p>
+        </div>
+
+        <div class="modality">
+            <h2>2. Brazilian Jiu-Jitsu (BJJ)</h2>
+            <p>Conhecido mundialmente como a "Arte Suave". Indo muito além do conceito básico de defesa pessoal, a
+                prática do BJJ desenvolve uma agilidade tremenda, resistência cardiovascular de elite, disciplina mental
+                de ferro e uma capacidade de resiliência psicológica única para enfrentar os problemas do dia a dia.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-title">O Nosso Ecossistema</div>
+
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <img src="link_da_imagem_1.jpg" alt="Treino 1">
+                <img src="link_da_imagem_2.jpg" alt="BJJ 2">
+                <img src="link_da_imagem_3.jpg" alt="Bodybuilding 3">
+                <img src="link_da_imagem_4.jpg" alt="Foco 4">
+                <img src="link_da_imagem_5.jpg" alt="Comunidade 5">
+
+                <img src="link_da_imagem_1.jpg" alt="Treino 1">
+                <img src="link_da_imagem_2.jpg" alt="BJJ 2">
+                <img src="link_da_imagem_3.jpg" alt="Bodybuilding 3">
+                <img src="link_da_imagem_4.jpg" alt="Foco 4">
+                <img src="link_da_imagem_5.jpg" alt="Comunidade 5">
+            </div>
+        </div>
+
+        <div class="footer-credits">
+            &copy; 2026 A Minha Missão. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>

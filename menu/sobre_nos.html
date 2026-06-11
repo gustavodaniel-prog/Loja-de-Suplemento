@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - A Minha Missão</title>
+    <style>
+        /* --- ESTILOS GERAIS --- */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #001689;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- CONTEÚDO PRINCIPAL --- */
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            /* Garante que o rodapé fique sempre em baixo */
+        }
+
+        h1 {
+            color: #111;
+            font-size: 2.2rem;
+            margin-top: 0;
+            border-bottom: 3px solid #001689;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        blockquote {
+            font-style: italic;
+            background: #f4f6ff;
+            border-left: 6px solid #ff6600;
+            /* Toque de cor de destaque */
+            padding: 20px;
+            margin: 30px 0 10px 0;
+            font-size: 1.2rem;
+            color: #001689;
+            border-radius: 0 8px 8px 0;
+            font-weight: 500;
+        }
+
+        /* --- RODAPÉ E CARROSSEL INFINITO --- */
+        footer {
+            background: #111;
+            color: #fff;
+            margin-top: auto;
+            padding-top: 40px;
+        }
+
+        .footer-title {
+            text-align: center;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff6600;
+            margin-bottom: 25px;
+        }
+
+        /* Contentor do Carrossel */
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            background: #1a1a1a;
+            padding: 20px 0;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        /* Linha que desliza */
+        .carousel-track {
+            display: flex;
+            width: calc(250px * 10);
+            /* Ajustar com base no número de imagens (dobrado para o loop) */
+            animation: scroll 25s linear infinite;
+        }
+
+        /* Imagens do Carrossel */
+        .carousel-track img {
+            width: 230px;
+            height: 150px;
+            object-fit: cover;
+            margin: 0 10px;
+            border-radius: 6px;
+            filter: grayscale(30%);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .carousel-track img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* Animação CSS para o Movimento Infinito */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 5));
+                /* Metade do tamanho total da track */
+            }
+        }
+
+        /* Pausa o carrossel quando o utilizador passa o rato por cima */
+        .carousel-container:hover .carousel-track {
+            animation-play-state: paused;
+        }
+
+        /* Direitos de Autor */
+        .footer-credits {
+            text-align: center;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Quem Está Por Detrás do Movimento</h1>
+        <p>Acreditamos fielmente que o corpo e a mente evoluem em perfeita harmonia. Este projeto nasceu da paixão
+            genuína pelo desenvolvimento pessoal, pela superação física e pela ciência por trás do treino estruturado.
+            Mais do que partilhar rotinas de exercício, o nosso foco principal é criar e fomentar uma comunidade de
+            pessoas dedicadas a superar os seus próprios limites todos os dias.</p>
+
+        <p>A nossa filosofia combina a precisão, foco e disciplina do <strong>Bodybuilding</strong> com a resiliência
+            estratégica e inteligência tática do <strong>Brazilian Jiu-Jitsu (BJJ)</strong>. O resultado final é um
+            ecossistema completo focado em saúde, alta performance e força mental robusta, rigorosamente desenhado para
+            quem recusa o conformismo e não se contenta com a média.</p>
+
+        <blockquote>
+            "A disciplina é a ponte inabalável entre as tuas metas mais ambiciosas e as tuas maiores conquistas."
+        </blockquote>
+    </div>
+
+    <footer>
+        <div class="footer-title">O Nosso Ecossistema</div>
+
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <img src="imagem de carossel/treino.webp" alt="Treino 1">
+                <img src="imagem de carossel/Bjj.jpg" alt="BJJ 2">
+                <img src="imagem de carossel/Bodybuilding.jfif" alt="Bodybuilding 3">
+                <img src="imagem de carossel/foco.jpg" alt="Foco 4">
+                <img src="imagem de carossel/comunidade.avif" alt="Comunidade 5">
+
+                <img src="imagem de carossel/14233932-mulher-musculosa-fazendo-treino-nas-costas-foto.jpg"
+                    alt="Treino 1">
+                <img src="imagem de carossel/bjj2.jfif" alt="BJJ 2">
+                <img src="imagem de carossel/Bodybuilding.jfif" alt="Bodybuilding 3">
+                <img src="imagem de carossel/foco.jpg" alt="Foco 4">
+                <img src="imagem de carossel/comunidade.avif" alt="Comunidade 5">
+            </div>
+        </div>
+        <div class="footer-credits">
+            &copy; 2026 A Minha Missão. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>

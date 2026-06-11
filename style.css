@@ -1,0 +1,225 @@
+/* RESET GLOBAL: Remove espaços padrões do navegador e define o cálculo de largura */
+* {
+    box-sizing: border-box;
+    /* Faz com que padding e border não aumentem o tamanho do elemento */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Garante que o menu atravesse a tela toda */
+    z-index: 1000;
+    /* REMOVIDO o "px" - agora funciona! */
+}
+
+/* --- MENU DE NAVEGAÇÃO --- */
+.menu {
+    background-color: #001689;
+
+    /* Cor de fundo escura */
+
+}
+
+.menu ul {
+    display: flex;
+    /* Coloca os itens da lista lado a lado */
+    justify-content: center;
+    /* Centraliza os links horizontalmente */
+    align-items: center;
+    /* Alinha verticalmente no centro */
+    gap: 25px;
+    /* Espaço entre cada link */
+    list-style: none;
+    /* Remove as "bolinhas" da lista */
+    padding: 15px 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: 0.3s;
+    /* Deixa o efeito de hover suave */
+    display: block;
+    /* Faz o link ocupar toda a área do botão */
+}
+
+.link {
+    color: #fff;
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+}
+
+.menu a:hover {
+    text-decoration: underline;
+    /* Cor vermelha ao passar o mouse */
+    border-radius: 5px;
+}
+
+/* 1. AJUSTE NA TAG MAIN (O PAI) */
+/* Removi o ponto (.) pois no seu HTML é uma tag, não uma classe */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centraliza o container horizontalmente */
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    padding-top: 100px;
+}
+
+.capa {
+
+
+    /* Garante que nada saia dos limites */
+    line-height: 0;
+    /* Ajuda a colar a imagem no elemento acima */
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+
+
+
+
+}
+
+.capa img {
+    width: 100%;
+    height: 100vh;
+    /* Diminuímos de 20% para 12% da altura da tela */
+    object-fit: cover;
+    /* Continua protegendo a imagem de distorcer */
+    object-position: center;
+    display: block;
+}
+
+.titulo {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 30px;
+    color: #001689;
+    /* Aumentei um pouco o espaço para os cards */
+
+
+
+    /* Sua formatação */
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 10px;
+
+
+
+    /* Opcional: deixa mais imponente */
+
+}
+
+
+
+
+/* 2. AJUSTE NO CONTAINER */
+.container-produtos {
+    display: grid;
+    /* Trava 3 colunas iguais */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    /* Centralização do Grid */
+    justify-content: center;
+    /* Centraliza as colunas */
+    justify-items: center;
+    /* Centraliza os cards dentro das colunas */
+
+    width: 100%;
+    max-width: 1000px;
+    /* Ajuste conforme a largura dos seus 3 cards */
+    margin-top: 50px;
+
+}
+
+/* 3. O CARD */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    /* Largura fixa do card */
+    height: 500px;
+    overflow: hidden;
+    /* Para a imagem respeitar a borda arredondada */
+    text-align: center;
+    text-shadow: 1px 1px 2px solid black;
+}
+
+/* IMAGEM SEM ESPAÇOS */
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+/* TEXTO INTERNO */
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.05);
+}
+
+/* BOTÃO */
+.btn-comprar {
+    background-color: #1D37AE;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.btn-comprar:hover {
+    background-color: #111111;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+    .container-produtos {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 colunas para tablet */
+    }
+}
+
+@media (max-width: 650px) {
+    .container-produtos {
+        grid-template-columns: 1fr;
+        /* 1 coluna para celular */
+    }
+}
+
+
+
+footer {
+    background-color: #001689;
+
+    text-align: center;
+    padding: 30px 5%;
+    text-align: center;
+    color: white;
+}

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - Mentoria e Acompanhamento</title>
+    <style>
+        /* --- ESTILOS GERAIS --- */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            background-color: #001689;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- CONTEÚDO PRINCIPAL --- */
+        .container {
+            max-width: 1000px;
+            /* Aumentado ligeiramente para acomodar melhor os 3 cards lado a lado */
+            margin: 60px auto;
+            padding: 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            /* Garante que o rodapé fique sempre em baixo */
+        }
+
+        h1 {
+            color: #111;
+            font-size: 2.2rem;
+            margin-top: 0;
+            border-bottom: 3px solid #001689;
+            padding-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        /* --- GRELHA DE SERVIÇOS AVANÇADA (3 COLUNAS) --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 Colunas perfeitas em desktop */
+            gap: 25px;
+            margin-bottom: 50px;
+            align-items: stretch;
+        }
+
+        .service-item {
+            background: #f8f9fa;
+            border-top: 5px solid #001689;
+            /* Borda no topo para um visual estilo "card" moderno */
+            border-left: none;
+            padding: 30px 25px;
+            border-radius: 0 0 8px 8px;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Elevação total e destaque ao passar o rato */
+        .service-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        /* O segundo card (Nutrição) ganha o destaque a laranja elétrico */
+        .service-item:nth-child(2) {
+            border-top-color: #ff6600;
+            background: #fffbf7;
+            /* Tom de fundo quente exclusivo para o destaque */
+        }
+
+        .service-item h3 {
+            margin: 0 0 15px 0;
+            color: #001689;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .service-item:nth-child(2) h3 {
+            color: #ff6600;
+        }
+
+        .service-item p {
+            margin: 0;
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* --- BOTÃO DE INSCRIÇÃO PREMIUM --- */
+        .btn-container {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 18px 42px;
+            background: #111;
+            /* Cor escura imponente */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            border: 2px solid transparent;
+        }
+
+        .btn:hover {
+            background: black;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 102, 0, 0.5);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* --- RODAPÉ E CARROSSEL INFINITO --- */
+        footer {
+            background: #001689;
+            color: #fff;
+            margin-top: auto;
+            padding-top: 40px;
+        }
+
+        .footer-title {
+            text-align: center;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #ff6600;
+            margin-bottom: 25px;
+        }
+
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            background: #1a1a1a;
+            padding: 20px 0;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-track {
+            display: flex;
+            width: calc(250px * 10);
+            animation: scroll 25s linear infinite;
+        }
+
+        .carousel-track img {
+            width: 230px;
+            height: 150px;
+            object-fit: cover;
+            margin: 0 10px;
+            border-radius: 6px;
+            filter: grayscale(30%);
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .carousel-track img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 5));
+            }
+        }
+
+        .carousel-container:hover .carousel-track {
+            animation-play-state: paused;
+        }
+
+        .footer-credits {
+            text-align: center;
+            padding: 20px;
+            background: #0a0a0a;
+            color: #666;
+            font-size: 0.85rem;
+            border-top: 1px solid #222;
+        }
+
+        /* --- RESPONSIVIDADE ADAPTATIVA --- */
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                /* Transforma em lista vertical em tablets e telemóveis */
+                gap: 20px;
+            }
+
+            .service-item {
+                border-top: none;
+                border-left: 5px solid #001689;
+                /* Volta para a borda lateral em ecrãs pequenos */
+                border-radius: 0 8px 8px 0;
+                padding: 25px;
+            }
+
+            .service-item:nth-child(2) {
+                border-left-color: #ff6600;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 25px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .btn {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Como Posso Ajudar-te a Evoluir</h1>
+        <p>Estás finalmente pronto para dar o próximo passo crucial na tua jornada e ter um acompanhamento 100%
+            personalizado? Explora atentamente as opções premium de consultoria disponíveis abaixo e escolhe aquela que
+            melhor se adapta ao teu momento de vida atual:</p>
+
+        <div class="services-grid">
+            <div class="service-item">
+                <h3>Consultoria de Treino Online</h3>
+                <p>Planos de musculação e bodybuilding totalmente individualizados, focados na tua necessidade real:
+                    quer
+                    seja ganho de massa muscular (hipertrofia), definição ou ganho de performance atlética.</p>
+            </div>
+
+            <div class="service-item">
+                <h3>Planeamento Nutricional Estratégico</h3>
+                <p>Cálculo exato de calorias e divisão minuciosa de macronutrientes (proteínas, carbohidratos e
+                    gorduras)
+                    ajustados à tua rotina. Garante que tens energia máxima para treinar e resultados estéticos
+                    constantes.</p>
+            </div>
+
+            <div class="service-item">
+                <h3>Mentoria de Foco e Rotina</h3>
+                <p>Desenvolvimento e organização de hábitos de alta performance. Aprende técnicas eficientes para
+                    conciliar
+                    perfeitamente o teu trabalho, estudos e treinos intensos sem nunca quebrar a consistência.</p>
+            </div>
+        </div>
+
+        <div class="btn-container">
+            <a href="mailto:teuemail@dominio.com" class="btn">Escolher o Meu Plano & Vencer</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-title">O Nosso Ecossistema</div>
+
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <img src="imagem de carossel/treino.webp" alt="Treino 1">
+                <img src="imagem de carossel/Bjj.jpg" alt="BJJ 2">
+                <img src="imagem de carossel/Bodybuilding.jfif" alt="Bodybuilding 3">
+                <img src="imagem de carossel/foco.jpg" alt="Foco 4">
+                <img src="imagem de carossel/comunidade.avif" alt="Comunidade 5">
+
+                <img src="imagem de carossel/14233932-mulher-musculosa-fazendo-treino-nas-costas-foto.jpg"
+                    alt="Treino 1">
+                <img src="imagem de carossel/bjj2.jfif" alt="BJJ 2">
+                <img src="imagem de carossel/Bodybuilding.jfif" alt="Bodybuilding 3">
+                <img src="imagem de carossel/foco.jpg" alt="Foco 4">
+                <img src="imagem de carossel/comunidade.avif" alt="Comunidade 5">
+            </div>
+        </div>
+
+        <div class="footer-credits">
+            &copy; 2026 A Minha Missão. Todos os direitos reservados.
+        </div>
+    </footer>
+
+</body>
+
+</html>
